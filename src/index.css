@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Montserrat", sans-serif;
+  
+  --color-brand-yellow: #F4B400;
+  --color-brand-charcoal: #2B2B2B;
+  --color-brand-off-white: #F5F5F5;
+  --color-brand-black: #1A1A1A;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-brand-off-white text-brand-black font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold uppercase tracking-tighter;
+  }
+}
+
+/* Custom scrollbar for charcoal theme */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-brand-off-white;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-brand-charcoal/20 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-brand-yellow;
+}
